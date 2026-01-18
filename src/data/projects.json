@@ -25,7 +25,7 @@
         "category": "Web",
         "description": "An intelligent data interface that converts natural language queries into executable SQL commands. It features integrated data visualization to turn database results into actionable insights instantly.",
         "tech": ["Python", "SQL", "LLMs", "Data Visualization"],
-        "image": "images/projects/askdb.png",
+        "image": "images/askdb.png",
         "githubUrl": "https://github.com/csreddy98/AskDB",
         "liveUrl": "http://askdb.csreddy.com"
     },
