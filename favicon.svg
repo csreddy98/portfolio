@@ -1,0 +1,13 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="128" height="128" rx="24" fill="#0a0a0a"/>
+  
+  <!-- Accent border -->
+  <rect width="128" height="128" rx="24" fill="none" stroke="#00d4aa" stroke-width="3"/>
+  
+  <!-- CD Text -->
+  <text x="64" y="80" font-family="Space Grotesk, Arial, sans-serif" font-size="56" font-weight="700" text-anchor="middle" fill="#00d4aa">CD</text>
+  
+  <!-- Small dot accent -->
+  <circle cx="104" cy="36" r="6" fill="#00d4aa"/>
+</svg>
