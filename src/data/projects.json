@@ -5,7 +5,7 @@
         "category": "web",
         "description": "An AI-driven educational platform designed to enhance personalized learning experiences through adaptive content delivery and intelligent progress tracking.",
         "tech": ["React", "Node.js", "AI/ML", "MongoDB"],
-        "image": "/images/curiolearn.png",
+        "image": "images/curiolearn.png",
         "githubUrl": "https://github.com/yourusername/curiolearn",
         "liveUrl": "https://curiolearn.demo.com"
     },
@@ -15,7 +15,7 @@
         "category": "library",
         "description": "A lightweight Object-Relational Mapper (ORM) for SQLite in Python. It provides a minimalist and intuitive API for managing database records as Python objects without the overhead of larger frameworks.",
         "tech": ["Python", "SQLite", "PyPI"],
-        "image": "/images/atomorm.png",
+        "image": "images/atomorm.png",
         "githubUrl": "https://github.com/csreddy98/atomorm",
         "liveUrl": "https://pypi.org/project/atomorm/"
     },
@@ -25,7 +25,7 @@
         "category": "Web",
         "description": "An intelligent data interface that converts natural language queries into executable SQL commands. It features integrated data visualization to turn database results into actionable insights instantly.",
         "tech": ["Python", "SQL", "LLMs", "Data Visualization"],
-        "image": "/images/projects/askdb.png",
+        "image": "images/projects/askdb.png",
         "githubUrl": "https://github.com/csreddy98/AskDB",
         "liveUrl": "http://askdb.csreddy.com"
     },
@@ -35,7 +35,7 @@
         "category": "ml",
         "description": "A fine-tuned language model optimized for the financial domain. Leveraging the Gemma-2-2b architecture, it provides accurate and rapid insights into complex financial queries based on a specialized training dataset.",
         "tech": ["Gemma-2-2b", "Hugging Face", "LLM Fine-tuning", "Python"],
-        "image": "/images/financial-advisor.png",
+        "image": "images/financial-advisor.png",
         "githubUrl": "https://github.com/csreddy98/financial-advisor",
         "liveUrl": "https://huggingface.co/csr/gemma-finanical-advisor"
     }

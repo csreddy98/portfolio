@@ -3,6 +3,7 @@ import './Projects.css'
 import projectsData from '../data/projects.json'
 
 const Projects = () => {
+  const BASE_URL = import.meta.env.BASE_URL
   const [activeFilter, setActiveFilter] = useState('all')
   const sectionRef = useRef(null)
   const [imageErrors, setImageErrors] = useState({})
@@ -82,7 +83,7 @@ const Projects = () => {
                   </div>
                 ) : (
                   <img 
-                    src={project.image} 
+                    src={`${BASE_URL}${project.image}`} 
                     alt={`${project.title} - ${project.description.slice(0, 60)}...`}
                     title={`${project.title} by Chandra Dondeti`}
                     onError={() => handleImageError(project.id)}
