@@ -1,0 +1,247 @@
+.about {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.highlight-item:hover {
+  border-color: var(--border-light);
+  transform: translateY(-2px);
+}
+
+.highlight-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.highlight-content h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.highlight-content p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.tech-stack {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.tech-stack-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: default;
+  min-height: 90px;
+}
+
+.tech-badge:hover {
+  border-color: var(--primary);
+  background: var(--hover-bg);
+}
+
+.tech-badge svg {
+  color: var(--primary);
+}
+
+.tech-name {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.about-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: transparent;
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid var(--primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+  background: var(--hover-bg);
+  transform: translateY(-2px);
+}
+
+.cta-button svg {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+  transform: translateX(5px);
+}
+
+@media (max-width: 1200px) {
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .highlight-item {
+    flex-direction: row;
+    text-align: left;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 0;
+  }
+  
+  .about-intro {
+    font-size: 1rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.625rem;
+  }
+  
+  .tech-badge {
+    padding: 1rem 0.75rem;
+    min-height: 80px;
+  }
+  
+  .tech-badge svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .tech-name {
+    font-size: 0.75rem;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+  
+  .highlight-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  
+  .highlight-content h3 {
+    font-size: 1rem;
+  }
+  
+  .highlight-content p {
+    font-size: 0.875rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 3rem 0;
+  }
+  
+  .tech-badge {
+    padding: 0.875rem 0.625rem;
+    min-height: 70px;
+  }
+  
+  .tech-badge svg {
+    width: 18px;
+    height: 18px;
+  }
+}
