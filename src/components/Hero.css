@@ -119,6 +119,7 @@
 .role-scroller {
   display: inline-block;
   height: 1.5em;
+  max-height: 1.5em;
   line-height: 1.5em;
   overflow: hidden;
   vertical-align: middle;
@@ -130,16 +131,20 @@
   flex-direction: column;
   will-change: transform;
   position: relative;
+  width: 100%;
 }
 
 .role-word {
   height: 1.5em;
+  min-height: 1.5em;
+  max-height: 1.5em;
   line-height: 1.5em;
   display: block;
   color: var(--primary);
   font-weight: 600;
   white-space: nowrap;
   flex-shrink: 0;
+  text-align: left;
 }
 
 .role-static {
