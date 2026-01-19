@@ -8,11 +8,19 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
+    console.log('Setting up interval...')
     const timer = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % PREFIXES.length)
+      setCurrentIndex(prevIndex => {
+        const newIndex = (prevIndex + 1) % PREFIXES.length
+        console.log('Index changed from', prevIndex, 'to', newIndex)
+        return newIndex
+      })
     }, 2500)
 
-    return () => clearInterval(timer)
+    return () => {
+      console.log('Cleaning up interval')
+      clearInterval(timer)
+    }
   }, [])
 
   return (
