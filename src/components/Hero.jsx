@@ -16,7 +16,7 @@ const Hero = () => {
         console.log('Index changed from', prevIndex, 'to', newIndex)
         return newIndex
       })
-    }, 2500)
+    }, 3500)
 
     return () => clearInterval(timer)
   }, [])
@@ -33,7 +33,7 @@ const Hero = () => {
             setIsTransitioning(true)
           })
         })
-      }, 600) // Match transition duration
+      }, 700) // Match transition duration
       
       return () => clearTimeout(timeout)
     }
@@ -78,7 +78,7 @@ const Hero = () => {
                 className="role-words" 
                 style={{ 
                   transform: `translateY(-${currentIndex * 100}%)`,
-                  transition: isTransitioning ? 'transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55)' : 'none'
+                  transition: isTransitioning ? 'transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55)' : 'none'
                 }}
               >
                 {[...PREFIXES, PREFIXES[0]].map((prefix, index) => (
