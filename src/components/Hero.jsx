@@ -53,8 +53,9 @@ const Hero = () => {
               {PREFIXES.map((prefix, index) => (
                 <span 
                   key={prefix} 
-                  className={`role-word ${index === currentIndex ? 'active' : ''}`}
+                  className={`role-word ${index === currentIndex ? 'active' : ''} ${index === currentIndex ? '' : 'hidden'}`}
                   itemProp={index === 0 ? "jobTitle" : undefined}
+                  style={{ position: index === currentIndex ? 'relative' : 'absolute' }}
                 >
                   {prefix}
                 </span>
