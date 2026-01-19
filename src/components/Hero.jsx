@@ -10,28 +10,34 @@ const Hero = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
+      setIsTransitioning(true)
       setCurrentIndex(prevIndex => {
         const newIndex = prevIndex + 1
         console.log('Index changed from', prevIndex, 'to', newIndex)
-        
-        // If we've shown all items, reset after this animation completes
-        if (newIndex > PREFIXES.length) {
-          setTimeout(() => {
-            setIsTransitioning(false)
-            setCurrentIndex(0)
-            setTimeout(() => setIsTransitioning(true), 50)
-          }, 600)
-        }
-        
         return newIndex
       })
     }, 2500)
 
-    return () => {
-      console.log('Cleaning up interval')
-      clearInterval(timer)
-    }
+    return () => clearInterval(timer)
   }, [])
+
+  useEffect(() => {
+    // Reset to 0 without animation when we reach the duplicate
+    if (currentIndex === PREFIXES.length) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(false)
+        setCurrentIndex(0)
+        // Re-enable transition after DOM update
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setIsTransitioning(true)
+          })
+        })
+      }, 600) // Match transition duration
+      
+      return () => clearTimeout(timeout)
+    }
+  }, [currentIndex])
 
   return (
     <section id="home" className="hero" itemScope itemType="https://schema.org/Person">
