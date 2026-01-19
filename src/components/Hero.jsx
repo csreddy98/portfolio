@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Github, Linkedin, Mail, ArrowRight, Download, User } from 'lucide-react'
 import './Hero.css'
 
-const PREFIXES = ['Full Stack', 'GenAI', 'React', 'Python', 'Backend']
+const PREFIXES = ['Full Stack', 'AI Applications', 'Python Backend', 'FinTech Software', 'Cloud Systems']
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
