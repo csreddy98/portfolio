@@ -6,13 +6,23 @@ const PREFIXES = ['Full Stack', 'GenAI', 'React', 'Python', 'Backend']
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(true)
 
   useEffect(() => {
-    console.log('Setting up interval...')
     const timer = setInterval(() => {
       setCurrentIndex(prevIndex => {
-        const newIndex = (prevIndex + 1) % PREFIXES.length
+        const newIndex = prevIndex + 1
         console.log('Index changed from', prevIndex, 'to', newIndex)
+        
+        // If we've shown all items, reset after this animation completes
+        if (newIndex > PREFIXES.length) {
+          setTimeout(() => {
+            setIsTransitioning(false)
+            setCurrentIndex(0)
+            setTimeout(() => setIsTransitioning(true), 50)
+          }, 600)
+        }
+        
         return newIndex
       })
     }, 2500)
@@ -60,10 +70,13 @@ const Hero = () => {
             <span className="role-scroller">
               <span 
                 className="role-words" 
-                style={{ transform: `translateY(-${currentIndex * 100}%)` }}
+                style={{ 
+                  transform: `translateY(-${currentIndex * 100}%)`,
+                  transition: isTransitioning ? 'transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55)' : 'none'
+                }}
               >
-                {PREFIXES.map((prefix, index) => (
-                  <span key={prefix} className="role-word" itemProp={index === 0 ? "jobTitle" : undefined}>
+                {[...PREFIXES, PREFIXES[0]].map((prefix, index) => (
+                  <span key={`${prefix}-${index}`} className="role-word" itemProp={index === 0 ? "jobTitle" : undefined}>
                     {prefix}
                   </span>
                 ))}
