@@ -6,8 +6,7 @@
         "description": "An AI-driven educational platform designed to enhance personalized learning experiences through adaptive content delivery and intelligent progress tracking.",
         "tech": ["React", "Node.js", "AI/ML", "MongoDB"],
         "image": "images/curiolearn.png",
-        "githubUrl": "https://github.com/yourusername/curiolearn",
-        "liveUrl": "https://curiolearn.demo.com"
+        "liveUrl": "https://curiolearn.com"
     },
     {
         "id": 2,

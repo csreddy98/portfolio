@@ -10,6 +10,19 @@ import Navigation from './components/Navigation'
 function App() {
   const [activeSection, setActiveSection] = useState('home')
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme')
+    return saved || 'dark'
+  })
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
+  }
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -47,7 +60,7 @@ function App() {
           top: `${mousePosition.y}px`,
         }}
       />
-      <Navigation activeSection={activeSection} />
+      <Navigation activeSection={activeSection} theme={theme} toggleTheme={toggleTheme} />
       <Hero />
       <About />
       <Projects />
