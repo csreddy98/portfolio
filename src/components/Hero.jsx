@@ -16,7 +16,7 @@ const Hero = () => {
         console.log('Index changed from', prevIndex, 'to', newIndex)
         return newIndex
       })
-    }, 4500)
+    }, 6500)
 
     return () => clearInterval(timer)
   }, [])
