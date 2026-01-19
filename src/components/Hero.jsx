@@ -2,16 +2,17 @@ import { useEffect, useState } from 'react'
 import { Github, Linkedin, Mail, ArrowRight, Download, User } from 'lucide-react'
 import './Hero.css'
 
+const PREFIXES = ['Full Stack', 'GenAI', 'React', 'Python', 'Backend']
+
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const prefixes = ['Full Stack', 'GenAI', 'React', 'Python', 'Backend']
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % prefixes.length)
+    const timer = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % PREFIXES.length)
     }, 2500)
-    return () => clearInterval(interval)
+
+    return () => clearInterval(timer)
   }, [])
 
   return (
@@ -53,7 +54,7 @@ const Hero = () => {
                 className="role-words" 
                 style={{ transform: `translateY(-${currentIndex * 100}%)` }}
               >
-                {prefixes.map((prefix, index) => (
+                {PREFIXES.map((prefix, index) => (
                   <span key={prefix} className="role-word" itemProp={index === 0 ? "jobTitle" : undefined}>
                     {prefix}
                   </span>
