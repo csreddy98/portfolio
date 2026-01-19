@@ -126,14 +126,6 @@
   position: relative;
 }
 
-.role-words {
-  display: flex;
-  flex-direction: column;
-  will-change: transform;
-  position: relative;
-  width: 100%;
-}
-
 .role-word {
   height: 1.5em;
   min-height: 1.5em;
@@ -143,8 +135,18 @@
   color: var(--primary);
   font-weight: 600;
   white-space: nowrap;
-  flex-shrink: 0;
-  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.role-word.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .role-static {

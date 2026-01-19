@@ -6,38 +6,14 @@ const PREFIXES = ['Full Stack', 'GenAI', 'React', 'Python', 'Backend']
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(true)
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIsTransitioning(true)
-      setCurrentIndex(prevIndex => {
-        const newIndex = prevIndex + 1
-        console.log('Index changed from', prevIndex, 'to', newIndex)
-        return newIndex
-      })
-    }, 6500)
+      setCurrentIndex(prevIndex => (prevIndex + 1) % PREFIXES.length)
+    }, 3000)
 
     return () => clearInterval(timer)
   }, [])
-
-  useEffect(() => {
-    // Reset to 0 without animation when we reach the duplicate
-    if (currentIndex === PREFIXES.length) {
-      const timeout = setTimeout(() => {
-        setIsTransitioning(false)
-        setCurrentIndex(0)
-        // Re-enable transition after DOM update
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            setIsTransitioning(true)
-          })
-        })
-      }, 800) // Match transition duration
-      
-      return () => clearTimeout(timeout)
-    }
-  }, [currentIndex])
 
   return (
     <section id="home" className="hero" itemScope itemType="https://schema.org/Person">
@@ -74,19 +50,15 @@ const Hero = () => {
           
           <div className="hero-role" aria-label="Professional roles">
             <span className="role-scroller">
-              <span 
-                className="role-words" 
-                style={{ 
-                  transform: `translateY(-${currentIndex * 100}%)`,
-                  transition: isTransitioning ? 'transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55)' : 'none'
-                }}
-              >
-                {[...PREFIXES, PREFIXES[0]].map((prefix, index) => (
-                  <span key={`${prefix}-${index}`} className="role-word" itemProp={index === 0 ? "jobTitle" : undefined}>
-                    {prefix}
-                  </span>
-                ))}
-              </span>
+              {PREFIXES.map((prefix, index) => (
+                <span 
+                  key={prefix} 
+                  className={`role-word ${index === currentIndex ? 'active' : ''}`}
+                  itemProp={index === 0 ? "jobTitle" : undefined}
+                >
+                  {prefix}
+                </span>
+              ))}
             </span>
             <span className="role-static">Engineer</span>
           </div>
