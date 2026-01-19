@@ -119,29 +119,26 @@
 .role-scroller {
   display: inline-block;
   height: 1.5em;
-  max-height: 1.5em;
   line-height: 1.5em;
   overflow: hidden;
   vertical-align: middle;
   position: relative;
+  min-width: 150px;
 }
 
 .role-word {
   height: 1.5em;
-  min-height: 1.5em;
-  max-height: 1.5em;
   line-height: 1.5em;
-  display: block;
+  display: inline-block;
   color: var(--primary);
   font-weight: 600;
   white-space: nowrap;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
   opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .role-word.active {
