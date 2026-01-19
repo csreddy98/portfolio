@@ -108,23 +108,36 @@
   font-weight: 500;
   color: var(--text-muted);
   margin-bottom: 1.5rem;
-  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
   animation: fadeInUp 0.5s ease 0.1s backwards;
 }
 
-.role-text {
-  color: var(--primary);
+.role-scroller {
+  display: inline-block;
+  height: 1.3em;
+  overflow: hidden;
+  vertical-align: bottom;
 }
 
-.cursor {
-  color: var(--primary);
-  animation: blink 1s infinite;
-  font-weight: 300;
+.role-words {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+.role-word {
+  height: 1.3em;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.role-static {
+  color: var(--text-secondary);
 }
 
 .hero-description {

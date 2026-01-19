@@ -3,37 +3,16 @@ import { Github, Linkedin, Mail, ArrowRight, Download, User } from 'lucide-react
 import './Hero.css'
 
 const Hero = () => {
-  const [text, setText] = useState('')
-  const [isDeleting, setIsDeleting] = useState(false)
-  const [loopNum, setLoopNum] = useState(0)
-  const [typingSpeed, setTypingSpeed] = useState(150)
-  const [imageError, setImageError] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-  const roles = ['Full Stack Engineer', 'React Developer', 'Python Developer', 'GenAI Engineer']
+  const prefixes = ['Full Stack', 'GenAI', 'React', 'Python', 'Backend']
 
   useEffect(() => {
-    const handleType = () => {
-      const i = loopNum % roles.length
-      const fullText = roles[i]
-
-      setText(isDeleting 
-        ? fullText.substring(0, text.length - 1)
-        : fullText.substring(0, text.length + 1)
-      )
-
-      setTypingSpeed(isDeleting ? 50 : 150)
-
-      if (!isDeleting && text === fullText) {
-        setTimeout(() => setIsDeleting(true), 2000)
-      } else if (isDeleting && text === '') {
-        setIsDeleting(false)
-        setLoopNum(loopNum + 1)
-      }
-    }
-
-    const timer = setTimeout(handleType, typingSpeed)
-    return () => clearTimeout(timer)
-  }, [text, isDeleting, loopNum, typingSpeed])
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % prefixes.length)
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section id="home" className="hero" itemScope itemType="https://schema.org/Person">
@@ -69,8 +48,19 @@ const Hero = () => {
           <h1 className="hero-name" itemProp="name">Chandra Dondeti</h1>
           
           <div className="hero-role" aria-label="Professional roles">
-            <span className="role-text" itemProp="jobTitle">{text}</span>
-            <span className="cursor" aria-hidden="true">|</span>
+            <span className="role-scroller">
+              <span 
+                className="role-words" 
+                style={{ transform: `translateY(-${currentIndex * 100}%)` }}
+              >
+                {prefixes.map((prefix, index) => (
+                  <span key={prefix} className="role-word" itemProp={index === 0 ? "jobTitle" : undefined}>
+                    {prefix}
+                  </span>
+                ))}
+              </span>
+            </span>
+            <span className="role-static">Engineer</span>
           </div>
           
           <p className="hero-description" itemProp="description">
@@ -101,7 +91,7 @@ const Hero = () => {
         <div className="hero-aside">
           <nav className="hero-social" aria-label="Social media links">
             <a 
-              href="https://github.com/chandradondeti" 
+              href="https://github.com/csreddy98" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Chandra Dondeti on GitHub"
@@ -110,7 +100,7 @@ const Hero = () => {
               <Github size={20} />
             </a>
             <a 
-              href="https://linkedin.com/in/chandradondeti" 
+              href="https://linkedin.com/in/csreddy98" 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Chandra Dondeti on LinkedIn"
@@ -128,7 +118,7 @@ const Hero = () => {
               <img src="images/hf-logo.svg" alt="" className="huggingface-icon" aria-hidden="true" style={{width: "25px"}} />
             </a>
             <a 
-              href="mailto:chandra@example.com" 
+              href="mailto:howdy@csreddy.com" 
               aria-label="Email Chandra Dondeti"
               itemProp="email"
             >
