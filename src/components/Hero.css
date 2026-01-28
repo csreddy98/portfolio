@@ -147,8 +147,6 @@
   transform: translateY(0);
   pointer-events: auto;
 }
-  transform: translateY(0);
-}
 
 .role-static {
   color: var(--text-secondary);
