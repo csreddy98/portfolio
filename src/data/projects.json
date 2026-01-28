@@ -38,15 +38,5 @@
         "image": "images/financial-advisor.png",
         "githubUrl": "https://github.com/csreddy98/financial-advisor",
         "liveUrl": "https://huggingface.co/csr/gemma-finanical-advisor"
-    },
-    {
-        "id": 5,
-        "title": "Resume Automation",
-        "category": "Frontend",
-        "description": "A streamlined tool for automating resume customization. It intelligently tailors content to match job descriptions, saving time and improving application relevance.",
-        "tech": ["React", "JavaScript", "CSS", "Vite"],
-        "image": "images/resume-automation.png",
-        "githubUrl": "https://github.com/csreddy98/resume-automation",
-        "liveUrl": "https://resume-automation.csreddy.com"
     }
 ]
