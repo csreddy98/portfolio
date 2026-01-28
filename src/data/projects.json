@@ -2,16 +2,17 @@
     {
         "id": 1,
         "title": "CurioLearn",
-        "category": "web",
+        "category": "Fullstack",
         "description": "An AI-driven educational platform designed to enhance personalized learning experiences through adaptive content delivery and intelligent progress tracking.",
         "tech": ["React", "Node.js", "AI/ML", "MongoDB"],
         "image": "images/curiolearn.png",
+        "githubUrl": "https://github.com/csreddy98/curiolearn",
         "liveUrl": "https://curiolearn.com"
     },
     {
         "id": 2,
         "title": "atomorm",
-        "category": "library",
+        "category": "Backend",
         "description": "A lightweight Object-Relational Mapper (ORM) for SQLite in Python. It provides a minimalist and intuitive API for managing database records as Python objects without the overhead of larger frameworks.",
         "tech": ["Python", "SQLite", "PyPI"],
         "image": "images/atomorm.png",
@@ -21,7 +22,7 @@
     {
         "id": 3,
         "title": "AskDB",
-        "category": "Web",
+        "category": "Fullstack",
         "description": "An intelligent data interface that converts natural language queries into executable SQL commands. It features integrated data visualization to turn database results into actionable insights instantly.",
         "tech": ["Python", "SQL", "LLMs", "Data Visualization"],
         "image": "images/askdb.png",
@@ -31,11 +32,21 @@
     {
         "id": 4,
         "title": "Financial QA (Gemma-2-2b Fine-tuned)",
-        "category": "ml",
+        "category": "UI/UX",
         "description": "A fine-tuned language model optimized for the financial domain. Leveraging the Gemma-2-2b architecture, it provides accurate and rapid insights into complex financial queries based on a specialized training dataset.",
         "tech": ["Gemma-2-2b", "Hugging Face", "LLM Fine-tuning", "Python"],
         "image": "images/financial-advisor.png",
         "githubUrl": "https://github.com/csreddy98/financial-advisor",
         "liveUrl": "https://huggingface.co/csr/gemma-finanical-advisor"
+    },
+    {
+        "id": 5,
+        "title": "Resume Automation",
+        "category": "Frontend",
+        "description": "A streamlined tool for automating resume customization. It intelligently tailors content to match job descriptions, saving time and improving application relevance.",
+        "tech": ["React", "JavaScript", "CSS", "Vite"],
+        "image": "images/resume-automation.png",
+        "githubUrl": "https://github.com/csreddy98/resume-automation",
+        "liveUrl": "https://resume-automation.csreddy.com"
     }
 ]
