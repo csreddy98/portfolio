@@ -183,12 +183,19 @@
   background: transparent;
   border: 1px solid var(--border);
   color: var(--text-secondary);
+  padding: 0.625rem;
+  flex: 0 0 auto;
 }
 
 .btn-share:hover {
   border-color: var(--primary);
   color: var(--primary);
   background: var(--hover-bg);
+}
+
+.btn-share svg {
+  width: 18px;
+  height: 18px;
 }
 
 @media (max-width: 1024px) {

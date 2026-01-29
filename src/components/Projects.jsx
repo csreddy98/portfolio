@@ -141,21 +141,21 @@ const Projects = () => {
                     View Code
                   </a>
                   <div className="tooltip-wrapper" onMouseEnter={(e) => handleMouseEnter(e, project)} onMouseLeave={handleMouseLeave}>
-                    <a
-                      href={project.liveUrl}
-                      className="action-btn btn-demo"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`View live demo of ${project.title}`}
-                      itemProp="url"
-                    >
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" strokeWidth="2" strokeLinecap="round"/>
-                        <polyline points="15 3 21 3 21 9" strokeWidth="2" strokeLinecap="round"/>
-                        <line x1="10" y1="14" x2="21" y2="3" strokeWidth="2" strokeLinecap="round"/>
-                      </svg>
-                      Live Demo
-                    </a>
+                  <a
+                    href={project.liveUrl}
+                    className="action-btn btn-demo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View live demo of ${project.title}`}
+                    itemProp="url"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" strokeWidth="2" strokeLinecap="round"/>
+                      <polyline points="15 3 21 3 21 9" strokeWidth="2" strokeLinecap="round"/>
+                      <line x1="10" y1="14" x2="21" y2="3" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                    View Project
+                  </a>
                   </div>
                   <button
                     className="action-btn btn-share"
