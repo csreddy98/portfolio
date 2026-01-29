@@ -1,19 +1,44 @@
 import { useState, useEffect, useRef } from 'react'
 import './Projects.css'
 import projectsData from '../data/projects.json'
+import Tooltip from './Tooltip'
 
 const Projects = () => {
   const BASE_URL = import.meta.env.BASE_URL
   const [activeFilter, setActiveFilter] = useState('all')
   const sectionRef = useRef(null)
   const [imageErrors, setImageErrors] = useState({})
+  const [tooltip, setTooltip] = useState({ visible: false, text: '', x: 0, y: 0 })
+
+  // AI summarization placeholder
+  const getSummary = async (project) => {
+    // In a real application, this would make an API call to an AI service.
+    // For this example, we'll just use the project's detailed description.
+    return Promise.resolve(project.detailedDescription);
+  }
+
+  const handleMouseEnter = async (e, project) => {
+    const summary = await getSummary(project);
+    const rect = e.target.getBoundingClientRect();
+    setTooltip({
+      visible: true,
+      text: summary,
+      x: rect.left + window.scrollX + rect.width / 2,
+      y: rect.top + window.scrollY - 10,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip({ visible: false, text: '', x: 0, y: 0 });
+  };
+
 
   // Dynamically generate filters from project categories
   const uniqueCategories = [...new Set(projectsData.map(p => p.category.toLowerCase()))]
   const filters = ['all', ...uniqueCategories.sort()]
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projectsData 
+  const filteredProjects = activeFilter === 'all'
+    ? projectsData
     : projectsData.filter(p => p.category.toLowerCase() === activeFilter)
 
   const handleImageError = (projectId) => {
@@ -40,6 +65,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects" ref={sectionRef} aria-labelledby="projects-title">
+       <Tooltip text={tooltip.text} visible={tooltip.visible} x={tooltip.x} y={tooltip.y} />
       <div className="container">
         <header className="section-header animate-on-scroll">
           <span className="section-tag">My Work</span>
@@ -61,8 +87,8 @@ const Projects = () => {
 
         <div className="projects-grid" role="list">
           {filteredProjects.map((project, index) => (
-            <article 
-              key={project.id} 
+            <article
+              key={project.id}
               className={`project-card animate-on-scroll ${
                 filteredProjects.length === 3 && index === 0 ? 'featured-card' : ''
               }`}
@@ -82,8 +108,8 @@ const Projects = () => {
                     <p className="placeholder-text">{project.title}</p>
                   </div>
                 ) : (
-                  <img 
-                    src={`${BASE_URL}${project.image}`} 
+                  <img
+                    src={`${BASE_URL}${project.image}`}
                     alt={`${project.title} - ${project.description.slice(0, 60)}...`}
                     title={`${project.title} by Chandra Dondeti`}
                     onError={() => handleImageError(project.id)}
@@ -101,10 +127,10 @@ const Projects = () => {
                   ))}
                 </ul>
                 <div className="project-actions">
-                  <a 
-                    href={project.githubUrl} 
-                    className="action-btn btn-code" 
-                    target="_blank" 
+                  <a
+                    href={project.githubUrl}
+                    className="action-btn btn-code"
+                    target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View source code for ${project.title} on GitHub`}
                     itemProp="codeRepository"
@@ -114,21 +140,23 @@ const Projects = () => {
                     </svg>
                     View Code
                   </a>
-                  <a 
-                    href={project.liveUrl} 
-                    className="action-btn btn-demo" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label={`View live demo of ${project.title}`}
-                    itemProp="url"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" strokeWidth="2" strokeLinecap="round"/>
-                      <polyline points="15 3 21 3 21 9" strokeWidth="2" strokeLinecap="round"/>
-                      <line x1="10" y1="14" x2="21" y2="3" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                    Live Demo
-                  </a>
+                  <div className="tooltip-wrapper" onMouseEnter={(e) => handleMouseEnter(e, project)} onMouseLeave={handleMouseLeave}>
+                    <a
+                      href={project.liveUrl}
+                      className="action-btn btn-demo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View live demo of ${project.title}`}
+                      itemProp="url"
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" strokeWidth="2" strokeLinecap="round"/>
+                        <polyline points="15 3 21 3 21 9" strokeWidth="2" strokeLinecap="round"/>
+                        <line x1="10" y1="14" x2="21" y2="3" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                      Live Demo
+                    </a>
+                  </div>
                 </div>
               </div>
             </article>

@@ -4,6 +4,7 @@
         "title": "CurioLearn",
         "category": "Fullstack",
         "description": "An AI-driven educational platform designed to enhance personalized learning experiences through adaptive content delivery and intelligent progress tracking.",
+        "detailedDescription": "CurioLearn is a comprehensive e-learning solution that leverages machine learning to create customized learning paths for students. It analyzes performance data in real-time to adapt the curriculum and provide targeted support, ensuring that every learner can achieve their full potential.",
         "tech": ["React", "Node.js", "AI/ML", "MongoDB"],
         "image": "images/curiolearn.png",
         "githubUrl": "https://github.com/csreddy98/curiolearn",
@@ -14,6 +15,7 @@
         "title": "atomorm",
         "category": "Backend",
         "description": "A lightweight Object-Relational Mapper (ORM) for SQLite in Python. It provides a minimalist and intuitive API for managing database records as Python objects without the overhead of larger frameworks.",
+        "detailedDescription": "atomorm simplifies database interactions in Python by mapping SQLite tables to Python classes. Its intuitive design and minimal setup make it an ideal choice for small to medium-sized applications where performance and ease of use are critical.",
         "tech": ["Python", "SQLite", "PyPI"],
         "image": "images/atomorm.png",
         "githubUrl": "https://github.com/csreddy98/atomorm",
@@ -24,6 +26,7 @@
         "title": "AskDB",
         "category": "Fullstack",
         "description": "An intelligent data interface that converts natural language queries into executable SQL commands. It features integrated data visualization to turn database results into actionable insights instantly.",
+        "detailedDescription": "AskDB bridges the gap between complex databases and non-technical users by allowing them to query data using everyday language. The platform's powerful NLP engine translates queries into SQL, while its visualization tools make it easy to understand the results.",
         "tech": ["Python", "SQL", "LLMs", "Data Visualization"],
         "image": "images/askdb.png",
         "githubUrl": "https://github.com/csreddy98/AskDB",
@@ -34,9 +37,10 @@
         "title": "Financial QA (Gemma-2-2b Fine-tuned)",
         "category": "UI/UX",
         "description": "A fine-tuned language model optimized for the financial domain. Leveraging the Gemma-2-2b architecture, it provides accurate and rapid insights into complex financial queries based on a specialized training dataset.",
+        "detailedDescription": "This project showcases the power of fine-tuning large language models for specialized domains. By training Gemma-2-2b on a curated dataset of financial documents, the model can provide nuanced and accurate answers to complex financial questions, making it a valuable tool for analysts and researchers.",
         "tech": ["Gemma-2-2b", "Hugging Face", "LLM Fine-tuning", "Python"],
         "image": "images/financial-advisor.png",
-        "githubUrl": "https://github.com/csreddy98/financial-advisor",
+        "githubUrl": "https/github.com/csreddy98/financial-advisor",
         "liveUrl": "https://huggingface.co/csr/gemma-finanical-advisor"
     }
 ]
