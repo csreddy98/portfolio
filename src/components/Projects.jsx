@@ -121,6 +121,16 @@ const Projects = () => {
               <div className="project-content">
                 <h3 className="project-title" itemProp="name">{project.title}</h3>
                 <p className="project-description" itemProp="description">{project.description}</p>
+                {project.keyTakeaways && project.keyTakeaways.length > 0 && (
+                  <div className="project-key-takeaways">
+                    <h4>Key Takeaways</h4>
+                    <ul>
+                      {project.keyTakeaways.map((takeaway, index) => (
+                        <li key={index}>{takeaway}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <ul className="project-tech" aria-label="Technologies used">
                   {project.tech.map((tech) => (
                     <li key={tech} className="tech-tag">{tech}</li>

@@ -8,7 +8,12 @@
         "tech": ["React", "Node.js", "AI/ML", "MongoDB"],
         "image": "images/curiolearn.png",
         "githubUrl": "https://github.com/csreddy98/curiolearn",
-        "liveUrl": "https://curiolearn.com"
+        "liveUrl": "https://curiolearn.com",
+        "keyTakeaways": [
+            "AI-powered personalized learning paths.",
+            "Real-time performance analysis for adaptive curriculum.",
+            "Focus on maximizing individual student potential."
+        ]
     },
     {
         "id": 2,
@@ -19,7 +24,12 @@
         "tech": ["Python", "SQLite", "PyPI"],
         "image": "images/atomorm.png",
         "githubUrl": "https://github.com/csreddy98/atomorm",
-        "liveUrl": "https://pypi.org/project/atomorm/"
+        "liveUrl": "https://pypi.org/project/atomorm/",
+        "keyTakeaways": [
+            "Simplifies database interactions in Python.",
+            "Lightweight alternative to larger ORMs.",
+            "Ideal for small to medium-sized applications."
+        ]
     },
     {
         "id": 3,
@@ -30,7 +40,12 @@
         "tech": ["Python", "SQL", "LLMs", "Data Visualization"],
         "image": "images/askdb.png",
         "githubUrl": "https://github.com/csreddy98/AskDB",
-        "liveUrl": "http://askdb.csreddy.com"
+        "liveUrl": "http://askdb.csreddy.com",
+        "keyTakeaways": [
+            "Natural language querying of databases.",
+            "Integrated data visualization for easy insights.",
+            "Bridges the gap between technical and non-technical users."
+        ]
     },
     {
         "id": 4,
@@ -41,6 +56,11 @@
         "tech": ["Gemma-2-2b", "Hugging Face", "LLM Fine-tuning", "Python"],
         "image": "images/financial-advisor.png",
         "githubUrl": "https/github.com/csreddy98/financial-advisor",
-        "liveUrl": "https://huggingface.co/csr/gemma-finanical-advisor"
+        "liveUrl": "https://huggingface.co/csr/gemma-finanical-advisor",
+        "keyTakeaways": [
+            "Specialized financial domain language model.",
+            "Fine-tuned Gemma-2-2b for high accuracy.",
+            "Valuable tool for financial analysts and researchers."
+        ]
     }
 ]
