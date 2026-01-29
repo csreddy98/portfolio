@@ -179,6 +179,18 @@
   background: var(--primary-light);
 }
 
+.btn-share {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.btn-share:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--hover-bg);
+}
+
 @media (max-width: 1024px) {
   .projects {
     padding: 5rem 0;
